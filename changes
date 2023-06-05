@@ -1,0 +1,21 @@
+1. with yices1 YicesAPI
+2. with yices2 file Yices2Engine
+3. with yices2 command line Yices2Com
+4. with yices2 API YicesEngine
+
+
+
+
+bis 31.03
+problem:undefined type nat
+KBOSMTSolver.java
+- nat changed to int(s150,s159,s181,s216,s218,s770,s775,s968,s1082,s1087,s1284?,s1293)
+
+problem: The context is unsat. Try(reset)
+
+YicesEngine.java
+s154
+cmds.add("--mode=one-shot");
+
+Main.java add system timeout
+

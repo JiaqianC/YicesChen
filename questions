@@ -1,0 +1,158 @@
+String[] commandArgs = args.toArray(new String[0]);
+Process process = Runtime.getRuntime().exec(commandArgs);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bis 06.04.2023
+
+1. The program crashes or is not fully operational
+	-narrow3.tes
+	-narrow4.tes
+2. signum?
+
+3. about yices1 -e is really the command line for yices1
+
+generate1.ptrs:
+
+YES
+
+is.pl:
+
+[yices, --mode=one-shot, /tmp/aproveSMT13539479767245724411.ys][yices, --mode=one-shot, /tmp/aproveSMT13181213517374480350.ys][yices, --mode=one-shot, /tmp/aproveSMT13468691598747907571.ys][yices, --mode=one-shot, /tmp/aproveSMT3420474158466363833.ys][yices, --mode=one-shot, /tmp/aproveSMT15973778646026701617.ys][yices, --mode=one-shot, /tmp/aproveSMT11439128453276625204.ys][yices, --mode=one-shot, /tmp/aproveSMT3330950072740103799.ys][yices, --mode=one-shot, /tmp/aproveSMT11192152598304963992.ys][yices, --mode=one-shot, /tmp/aproveSMT15678336440191936260.ys][yices, --mode=one-shot, /tmp/aproveSMT1022421286525082075.ys][yices, --mode=one-shot, /tmp/aproveSMT9134819023567161345.ys][yices, --mode=one-shot, /tmp/aproveSMT12253186054662170900.ys][yices, --mode=one-shot, /tmp/aproveSMT17411275180470844374.ys][yices, --mode=one-shot, /tmp/aproveSMT10817511444553089706.ys][yices, --mode=one-shot, /tmp/aproveSMT13519989401571178012.ys][yices, --mode=one-shot, /tmp/aproveSMT12846070542974773283.ys]MAYBE
+
+lists1.ptrs:
+
+YES
+
+boundLoop0.ptrs:
+
+YES
+
+
+lists1.ptrs:
+
+YES
+
+boundLoop0.ptrs:
+
+YES
+
+lists1.ptrs:
+
+YES
+
+boundLoop0.ptrs:
+
+YES
+
+long startTime=System.currentTimeMillis();   //获取开始时间  
+doSomeThing();  //测试的代码段  
+long endTime=System.currentTimeMillis(); //获取结束时间  
+System.out.println("程序运行时间： "+(end-start)+"ms");  
+
+
+generate1.ptrs:
+
+YES
+this start time:2431933294924ms
+this end time:2432341968325ms
+this run time:408673401ms
+
+is.pl:
+
+[yices, --mode=one-shot, /tmp/aproveSMT13248465097108458883.ys][yices, --mode=one-shot, /tmp/aproveSMT6547484988364282149.ys][yices, --mode=one-shot, /tmp/aproveSMT9042466678562298683.ys][yices, --mode=one-shot, /tmp/aproveSMT3897422983681722694.ys][yices, --mode=one-shot, /tmp/aproveSMT8104203315909265632.ys][yices, --mode=one-shot, /tmp/aproveSMT18218235966248083711.ys][yices, --mode=one-shot, /tmp/aproveSMT16672400864418259948.ys][yices, --mode=one-shot, /tmp/aproveSMT6122116825854500432.ys][yices, --mode=one-shot, /tmp/aproveSMT7493120503850442516.ys][yices, --mode=one-shot, /tmp/aproveSMT18128476120710351934.ys][yices, --mode=one-shot, /tmp/aproveSMT13262242172412153730.ys][yices, --mode=one-shot, /tmp/aproveSMT3384093357626317103.ys][yices, --mode=one-shot, /tmp/aproveSMT12065659187023501128.ys][yices, --mode=one-shot, /tmp/aproveSMT6330926421680670920.ys][yices, --mode=one-shot, /tmp/aproveSMT3788419186381446727.ys][yices, --mode=one-shot, /tmp/aproveSMT1831496527557107879.ys]MAYBE
+this start time:2432342040086ms
+this end time:2433053730868ms
+this run time:711690782ms
+
+lists1.ptrs:
+
+YES
+this start time:2433053822924ms
+this end time:2433429519170ms
+this run time:375696246ms
+
+boundLoop0.ptrs:
+
+YES
+this start time:2433429557036ms
+this end time:2433616063992ms
+this run time:186506956ms
+-----------------------
+start time:2431933285745ms
+end time:2433616095241ms
+total run time:1682809496ms
+
+
+bis 31.03.2023
+1. about context
+2. about .smt and .ys
+3. in .smt: Doesn't look normal, lots of underscores and spaces
+
+-yices aproveSMT16046773501214529750.ys 
+unsat
+unsat
+
+-yices aproveSMT11918026476560025176.ys 
+unsat
+The context is unsat. Try(reset)
+unsat
+
+(define d::int)
+(define c::int)
+(assert (>= 0 0))
+(assert (>= (+ -1) 0))
+(assert (and (>= (+ d c) 0) (>= 0 0)))
+(check)
+
+define d and c are int
+1. 0>=0
+2. (assert (>= (+ -1) 0))?
+3. c+d>=0 and 0>=0
+check
+
+-yices aproveSMT8494370841530735651.ys
+unsat
+
+define
+assert
+check
+show model
+assert
+check
+
+KBOSolver:
+s149        
+	// Define w_0 > 0
+        smtInput.append("(define w0::int)\n");
+        smtInput.append("(assert (> w0 0))\n");?
+
+
+-----------------------------------------------------------
+bis  10.03.2023
+1. the binding for java and yices2
+	-cannot use ant with jdk19
+	-install ant and use openjdk11
+	-cannot open eclipse with openjdk11
+	
+2. yices1
+	-set the path into ~/.bashrc file but do not work
+
+3. code
+	-YICESNameGenera.java
+	-structure
+	-aprove>>src
+	
+

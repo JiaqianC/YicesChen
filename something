@@ -1,0 +1,59 @@
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no yices2java in java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2444)
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:848)
+	at java.base/java.lang.System.loadLibrary(System.java:2047)
+	at com.sri.yices.Yices.<clinit>(Yices.java:16)
+	at MCSat.main(MCSat.java:15)
+
+
+java -Djava.library.path=/home/jiaqianchen/EDisk/yices2_java_bindings-2.6.1/dist/lib -jar /home/jiaqianchen/EDisk/yices2_java_bindings-2.6.1/dist/lib/yices.jar
+
+
+input是一个list的cmd，output是一个list的pair,list中的内容分别是
+
+chmod +x build.sh
+./build.sh
+
+export YICES_JNI=/home/jiaqianchen/EDisk/yices2_java_bindings-2.6.1/dist/lib
+export YICES_CLASSPATH=/home/jiaqianchen/EDisk/yices2_java_bindings-2.6.1/build/classes
+
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/java/jdk-19.0.2/bin/java" 1
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/java/jdk-19.0.2/bin/javac" 1
+
+/usr/lib/java/jdk-19.0.2/include/jni.h
+
+sudo gedit ~/.bashrc file
+export JAVA_HOME=/usr/lib/java/jdk-19.0.2
+export PATH="$PATH:$JAVA_HOME/bin"
+
+
+
+/usr/lib/jvm/java-11-openjdk-amd64
+
+PATH=$PATH:/home/jiaqianchen/EDisk/yices-1.0.40/bin
+export PATH
+
+export PATH="/home/jiaqianchen/EDisk/yices-1.0.40/bin:$PATH"
+
+
+minisat2 install:
+sudo apt-get update -y
+sudo apt-get install -y minisat2
+
+z3 install:
+sudo apt-get update
+sudo apt-get install -y z3
+
+z3 with cmake and resource:
+Run the following in the top level directory of the Z3 repository.
+
+```
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ../
+make -j4 # Replace 4 with an appropriate number
+done
+
+>> /usr/bin/ld: final link failed: No space left on device ld returned 1 exit status
+
+
